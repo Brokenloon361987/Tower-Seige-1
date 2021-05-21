@@ -1,0 +1,39 @@
+class Cata{ 
+    constructor(bodyA, pointB){
+        var options = {
+            bodyA: bodyA,
+            pointB: pointB,
+            stiffness: 0.07,
+            length: 1
+        }
+        // this.sling1 = loadImage('sprites/sling1.png')
+        // this.sling2 = loadImage('sprites/sling2.png')
+        // this.sling3 = loadImage('sprites/sling3.png')
+
+        this.pointB = pointB
+        this.sling = Constraint.create(options);
+        World.add(world, this.sling);
+    }
+
+    fly(){
+        this.sling.bodyA = null;
+        
+    }
+
+    attach(body){
+      this.sling.bodyA = Ball.body
+      Ball.x = 200;
+      Ball.y = 200;
+    }
+
+    display(){
+        // image(this.sling1, 200, 20)
+        // image(this.sling2, 172, 20)
+        
+        if(this.sling.bodyA){
+            var pointA = this.sling.bodyA.position;
+            var pointB = this.pointB;  
+        }
+    }
+    
+}
